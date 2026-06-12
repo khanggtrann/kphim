@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/danh-sach/phim-moi-cap-nhat?page=1\")",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/tim-kiem?keyword=co%20dau&page=1\")",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/the-loai/phim-bo?page=1\")",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/phim/co-dau-hao-mon\")",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/v1/api/tim-kiem?keyword=co+dau&page=1\")",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/v1/api/the-loai/hanh-dong?page=1\")",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/phim/fc-soldout\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/v1/api/tim-kiem?keyword=co%20dau&page=1\")",
+      "Bash(curl -s --max-time 15 \"https://ophim1.com/v1/api/the-loai/phim-bo?page=1\")",
+      "Bash(pnpm build *)",
+      "Bash(pkill -f \"vite\")"
+    ]
+  }
+}
