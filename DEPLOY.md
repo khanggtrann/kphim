@@ -3,7 +3,7 @@
 Everything in this repo is already configured and committed. You just need to
 create the repo on GitHub and push. Final site URL will be:
 
-**https://YOUR_USERNAME.github.io/kphim/**
+**https://khanggtrann.github.io/kphim/**
 
 ---
 
@@ -22,7 +22,7 @@ GitHub will show a page with a URL. Copy the HTTPS one, then run these in a
 terminal **inside this folder** (`kphim`):
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/kphim.git
+git remote add origin https://github.com/khanggtrann/kphim.git
 git push -u origin main
 ```
 
@@ -39,7 +39,7 @@ as the password (GitHub no longer accepts your account password for git):
 3. That's it. Go to the **Actions** tab; you'll see "Deploy to GitHub Pages"
    running. When it finishes (about 1–2 min), your site is live at:
 
-   **https://YOUR_USERNAME.github.io/kphim/**
+   **https://khanggtrann.github.io/kphim/**
 
 ## 4. Future updates
 
