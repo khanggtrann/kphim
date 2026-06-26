@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { PasswordGate } from './components/PasswordGate';
 import { Navbar }       from './components/Navbar';
 import { HomePage }     from './pages/HomePage';
 import { DetailPage }   from './pages/DetailPage';
@@ -7,6 +8,7 @@ import { CategoryPage } from './pages/CategoryPage';
 
 export default function App() {
   return (
+    <PasswordGate>
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Navbar />
       <Routes>
@@ -24,5 +26,6 @@ export default function App() {
         } />
       </Routes>
     </BrowserRouter>
+    </PasswordGate>
   );
 }
