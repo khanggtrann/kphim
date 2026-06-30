@@ -12,6 +12,15 @@ function SearchIcon() {
   );
 }
 
+function FilterIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+    </svg>
+  );
+}
+
 function ChevronIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -80,7 +89,7 @@ function NavDropdown({ label, basePath, items }) {
   );
 }
 
-export function Navbar() {
+export function Navbar({ onOpenFilter }) {
   const [input, setInput] = useState('');
   const navigate = useNavigate();
 
@@ -112,6 +121,9 @@ export function Navbar() {
           ))}
           <NavDropdown label="Thể loại" basePath="/the-loai" items={GENRES} />
           <NavDropdown label="Quốc gia" basePath="/quoc-gia" items={COUNTRIES} />
+          <button type="button" className="nav-link nav-filter-btn" onClick={onOpenFilter}>
+            <FilterIcon /> Bộ lọc
+          </button>
         </div>
 
         <div className="nav-search">

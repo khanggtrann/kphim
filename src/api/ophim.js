@@ -30,4 +30,16 @@ export const ophimApi = {
   /** Danh sách phim theo quốc gia */
   getByCountry: (slug, page = 1) =>
     fetcher(`${API_BASE}/v1/api/quoc-gia/${slug}?page=${page}`),
+
+  /**
+   * Lọc kết hợp nhiều tiêu chí (thể loại + quốc gia + năm) cùng lúc.
+   * Dùng base `phim-moi` để bao gồm mọi loại phim (bộ / lẻ / hoạt hình).
+   */
+  filter: ({ category, country, year, page = 1 } = {}) => {
+    const qs = new URLSearchParams({ page: String(page) });
+    if (category) qs.set('category', category);
+    if (country)  qs.set('country', country);
+    if (year)     qs.set('year', String(year));
+    return fetcher(`${API_BASE}/v1/api/danh-sach/phim-moi?${qs.toString()}`);
+  },
 };

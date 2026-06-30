@@ -1,18 +1,25 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { PasswordGate } from './components/PasswordGate';
-import { Navbar }       from './components/Navbar';
-import { HomePage }     from './pages/HomePage';
-import { DetailPage }   from './pages/DetailPage';
-import { SearchPage }   from './pages/SearchPage';
-import { CategoryPage } from './pages/CategoryPage';
+import { PasswordGate }  from './components/PasswordGate';
+import { Navbar }        from './components/Navbar';
+import { FilterDrawer }  from './components/FilterDrawer';
+import { HomePage }      from './pages/HomePage';
+import { DetailPage }    from './pages/DetailPage';
+import { SearchPage }    from './pages/SearchPage';
+import { CategoryPage }  from './pages/CategoryPage';
+import { BrowsePage }    from './pages/BrowsePage';
 
-export default function App() {
+function Shell() {
+  const [filterOpen, setFilterOpen] = useState(false);
+  const openFilter = () => setFilterOpen(true);
+
   return (
-    <PasswordGate>
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <Navbar />
+    <>
+      <Navbar onOpenFilter={openFilter} />
+      <FilterDrawer open={filterOpen} onClose={() => setFilterOpen(false)} />
       <Routes>
         <Route path="/"                element={<HomePage />}     />
+        <Route path="/duyet"           element={<BrowsePage onOpenFilter={openFilter} />} />
         <Route path="/phim/:slug"      element={<DetailPage />}   />
         <Route path="/tim-kiem"        element={<SearchPage />}   />
         <Route path="/the-loai/:slug"  element={<CategoryPage type="the-loai" />} />
@@ -26,7 +33,16 @@ export default function App() {
           </main>
         } />
       </Routes>
-    </BrowserRouter>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <PasswordGate>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <Shell />
+      </BrowserRouter>
     </PasswordGate>
   );
 }
