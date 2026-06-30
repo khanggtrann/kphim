@@ -121,10 +121,11 @@ export function Navbar({ onOpenFilter }) {
           ))}
           <NavDropdown label="Thể loại" basePath="/the-loai" items={GENRES} />
           <NavDropdown label="Quốc gia" basePath="/quoc-gia" items={COUNTRIES} />
-          <button type="button" className="nav-link nav-filter-btn" onClick={onOpenFilter}>
-            <FilterIcon /> Bộ lọc
-          </button>
         </div>
+
+        <button type="button" className="nav-link nav-filter-btn" onClick={onOpenFilter}>
+          <FilterIcon /> <span className="nav-filter-label">Bộ lọc</span>
+        </button>
 
         <div className="nav-search">
           <form onSubmit={handleSearch}>

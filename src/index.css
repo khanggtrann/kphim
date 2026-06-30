@@ -271,6 +271,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
   border: none;
   background: none;
   font-family: inherit;
@@ -715,8 +716,19 @@ main {
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .nav-search input { width: 160px; }
-  .nav-search input:focus { width: 200px; }
+  .nav-inner { gap: 12px; }
+  /* Mobile: [logo] [ô tìm kiếm co giãn] [Bộ lọc] */
+  .nav-search { order: 1; flex: 1; margin-left: 0; }
+  .nav-search input,
+  .nav-search input:focus { width: 100%; }
+  .nav-filter-btn {
+    order: 2;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg3);
+    color: var(--text);
+  }
   .hero-slide { aspect-ratio: 16/9; }
   .hero-info h2 { font-size: 18px; }
   .hero-info p  { display: none; }
