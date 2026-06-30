@@ -17,6 +17,7 @@ export default function App() {
         <Route path="/tim-kiem"        element={<SearchPage />}   />
         <Route path="/the-loai/:slug"  element={<CategoryPage type="the-loai" />} />
         <Route path="/danh-sach/:slug" element={<CategoryPage type="danh-sach" />} />
+        <Route path="/quoc-gia/:slug"  element={<CategoryPage type="quoc-gia" />} />
         {/* Fallback */}
         <Route path="*" element={
           <main style={{ textAlign: 'center', padding: '80px 20px', color: 'var(--text2)' }}>

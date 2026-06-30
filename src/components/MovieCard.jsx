@@ -1,4 +1,4 @@
-import { imgUrl } from '../utils/helpers';
+import { imgUrl, hasLongTieng } from '../utils/helpers';
 
 function PlayIcon() {
   return (
@@ -28,6 +28,7 @@ export function MovieCard({ movie, onClick }) {
         </div>
         {epLabel && <span className="movie-ep-badge">{epLabel}</span>}
         {movie.quality && <span className="movie-quality">{movie.quality}</span>}
+        {hasLongTieng(movie) && <span className="movie-lt-badge">Lồng tiếng</span>}
       </div>
 
       <div className="movie-info">

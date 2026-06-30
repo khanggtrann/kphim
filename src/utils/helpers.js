@@ -17,6 +17,15 @@ export function normalizeMovieList(data) {
 }
 
 /**
+ * Phim có bản lồng tiếng hay không.
+ * Trường `lang` của OPhim chứa các giá trị như "Vietsub",
+ * "Lồng Tiếng", "Vietsub + Thuyết Minh + Lồng Tiếng", ...
+ */
+export function hasLongTieng(movie) {
+  return /lồng tiếng/i.test(movie?.lang ?? '');
+}
+
+/**
  * Normalize thông tin phân trang.
  *
  * - Endpoint gốc (/danh-sach/phim-moi-cap-nhat) trả về `pagination` có sẵn `totalPages`.
